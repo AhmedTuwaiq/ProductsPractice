@@ -1,0 +1,24 @@
+﻿ <div class="container">
+     <div style="text-align: center">
+         <h1>Products List</h1>
+     </div>
+        
+    <br/>
+    <br/>
+    <div class="row">
+        @{
+            List<Book> books = ViewBag.books as List<Book>;
+
+            foreach (Book book in books)
+            {
+                <div class="col-4">
+                    <h2>@book.Name</h2>
+                    <img src=@book.URL alt="book image" width="150" height="200"/>
+                    <p>@book.Price SAR</p>
+                    <a href="/products/details/@book.Id?color=green" class="btn btn-primary">details</a>
+                </div>
+            }
+        }
+    </div>
+</div>
+

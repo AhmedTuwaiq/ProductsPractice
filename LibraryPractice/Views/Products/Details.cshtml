@@ -1,0 +1,19 @@
+﻿<div class="container" style="text-align: center">
+    <h1>Book details</h1>
+    
+    <div style="background-color: @ViewBag.color">
+        @{
+            Book book = ViewBag.book;
+        
+            if (book == null)
+            {
+                <h2>error book not found</h2>
+                return;
+            }
+            
+            <h2>@book.Name</h2>
+            <img src=@book.URL alt="book image" width="150" height="200"/>
+            <p>@book.Price SAR</p>
+        }
+    </div>
+</div>
